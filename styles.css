@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #f3f3f3; /* Standard-Hintergrundfarbe */
+    color: #333; /* Standardtextfarbe */
+    transition: background-color 0.5s, color 0.5s; /* Sanfter Übergang für Dark-Modus */
+}
+
+h1 {
+    color: #333;
+    transition: color 0.5s; /* Sanfter Übergang für Dark-Modus */
+}
+
+.button {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    width: 150px; /* Breite der Buttons */
+    height: 70px; /* Höhe der Buttons */
+    line-height: 70px; /* Zentriert den Text vertikal */
+    transition: background-color 0.5s; /* Sanfter Übergang für Dark-Modus */
+}
+
+#netflix-button {
+    background-color: #010101; /* Netflix Red */
+}
+
+#youtube-button {
+    background-color: #010101; /* YouTube Red */
+}
+
+#spotify-button {
+    background-color: #010101; /* Spotify Green */
+}
+
+.button img {
+    width: 50px; /* Breite der Bilder */
+    height: 50px; /* Höhe der Bilder */
+    vertical-align: middle; /* Zentriert die Bilder vertikal */
+    margin-right: 10px;
+}
+
+/* Dark-Modus-Stile */
+body.dark-mode {
+    background-color: #333; /* Dunkler Hintergrund */
+    color: #fff; /* Helle Textfarbe (important, um allgemeine Stile zu überschreiben) */
+}
+
+.button.dark-mode {
+    background-color: #555; /* Dunkler Button-Hintergrund */
+}
+
+body.dark-mode h1 {
+    color: #fff; /* Helle Überschrift im Dark-Modus (important, um allgemeine Stile zu überschreiben) */
+}
+
+/* Dark-Modus-Switch */
+.dark-mode-switch {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+.switch-label {
+    margin-right: 5px;
+    cursor: pointer;
+    color: #333;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider-container {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: background-color 0.5s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.slider-container:hover .slider {
+    background-color: #999;
+}
+
+.switch input:checked + .slider-container .slider {
+    background-color: #555;
+}
+
+.switch.dark-mode-switch input:checked + .slider-container .slider {
+    background-color: #333; /* Ändere die Hintergrundfarbe des Sliders im Dark Mode */
+}
+
+.switch input:checked + .slider-container .slider:before {
+    transform: translateX(20px);
+}
+
+.switch.dark-mode-switch input:checked + .slider-container .slider:before {
+    background-color: #fff; /* Ändere die Hintergrundfarbe des Sliders im Dark Mode */
+    transform: translateX(20px);
+}
+
+.switch.dark-mode-switch {
+    color: #333;
+}
+
+.dark-mode-switch input:checked + .switch-label {
+    color: #fff;
+}
